@@ -1,0 +1,15 @@
+name: build and upload container
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v2
+      run: GOOS=windows GOARCH=amd64 go build .
+      run: GOOS=linux GOARCH=amd64 go build .
