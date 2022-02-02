@@ -1,4 +1,4 @@
-name: build and upload container
+name: build and upload binaries
 
 on:
   push:
