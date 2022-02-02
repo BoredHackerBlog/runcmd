@@ -11,5 +11,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-go@v2
-      run: GOOS=windows GOARCH=amd64 go build .
-      run: GOOS=linux GOARCH=amd64 go build .
+      
+      - name: build windows binary
+        run: GOOS=windows GOARCH=amd64 go build .
+        
+      - name: build linux binary
+        run: GOOS=linux GOARCH=amd64 go build .
+        
+      - name: Upload
+        uses: softprops/action-gh-release@v1
+        with:
+          files: "runcmd*"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
