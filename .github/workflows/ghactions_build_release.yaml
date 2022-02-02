@@ -23,5 +23,6 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: "runcmd*"
+          tag_name: "main"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
