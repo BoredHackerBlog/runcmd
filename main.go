@@ -26,12 +26,6 @@ func main(){
 		os.Exit(1)
 	}
 
-	f, err := os.Create(logfile) //https://golangbot.com/write-files/
-    if err != nil {
-        fmt.Println(err)
-        return
-    }
-
 	var commands string
 
 	if textfile != "" {
@@ -54,7 +48,16 @@ func main(){
 			return
 		}
 		commands = string(content)
+	} else {
+		fmt.Println("file or url are required")
+		return
 	}
+
+	f, err := os.Create(logfile) //https://golangbot.com/write-files/
+    if err != nil {
+        fmt.Println(err)
+        return
+    }
 
 	commands = strings.Replace(commands, "\r\n", "\n", -1)
 	commands_split := strings.Split(commands, "\n")
