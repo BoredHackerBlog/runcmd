@@ -8,8 +8,6 @@ just golang binary that runs commands from url or local file and logs output
 Usage of ./runcmd:
   -file string
         Text file
-  -log string
-        Output log file - required
   -url string
         URL
 ```
@@ -17,17 +15,17 @@ Usage of ./runcmd:
 # example
 
 ```
-~/runcmd$ cat commands.txt 
+ubuntu:~/runcmd$ cat cmd.txt 
 ls
 date
 
-~/runcmd$ ./runcmd -log output.txt -file commands.txt
+ubuntu:~/runcmd$ ./main -file cmd.txt 
+2022-04-08 18:45:18.349384602 -0700 PDT m=+0.000543554 , ls
+2022-04-08 18:45:18.351011802 -0700 PDT m=+0.002170771 , cmd.txt
+main
+main.go
+README.md
 
-~/runcmd$ cat output.txt
-ls
-commands.txt
-output.txt
-runcmd
-date
-Tue 01 Feb 2022 10:25:50 PM EST
+2022-04-08 18:45:18.351107496 -0700 PDT m=+0.002266450 , date
+2022-04-08 18:45:18.352342846 -0700 PDT m=+0.003501829 , Fri 08 Apr 2022 06:45:18 PM PDT
 ```
