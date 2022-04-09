@@ -22,6 +22,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: "runcmd*"
-          tag_name: ${{ github.ref }}
+          tag_name: "main"
+          #tag_name: ${{ github.ref }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
