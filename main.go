@@ -71,6 +71,7 @@ func main(){
 		}
 
 		//fmt.Println(time.Now(), ",", string(output))
+		fmt.Println(string(output))
 	}
 
 }
