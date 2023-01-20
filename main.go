@@ -62,14 +62,15 @@ func main(){
 		args := strings.Fields(command)
 		cmd := exec.Command(args[0], args[1:]...)
 		
-		fmt.Println(time.Now(), ",", command)
+		//fmt.Println(time.Now(), ",", command)
 
-		output, err := cmd.CombinedOutput()
+		//output, err := cmd.CombinedOutput()
+		_, err := cmd.CombinedOutput()
 		if err != nil {
 			fmt.Println(err)
 		}
 
-		fmt.Println(time.Now(), ",", string(output))
+		//fmt.Println(time.Now(), ",", string(output))
 	}
 
 }
