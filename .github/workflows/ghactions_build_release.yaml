@@ -13,13 +13,13 @@ jobs:
       - uses: actions/setup-go@v2
       
       - name: build windows binary
-        run: GOOS=windows GOARCH=amd64 go build main.go
+        run: GOOS=windows GOARCH=amd64 go build -o runcmd.exe main.go
         
       - name: build linux binary
-        run: GOOS=linux GOARCH=amd64 go build main.go
+        run: GOOS=linux GOARCH=amd64 go build -o runcmd.linux main.go
         
       - name: build mac binary
-        run: GOOS=darwin GOARCH=amd64 go build main.go
+        run: GOOS=darwin GOARCH=amd64 go build -o runcmd.mac main.go
         
       - name: Upload
         uses: softprops/action-gh-release@v1
