@@ -65,7 +65,7 @@ func main(){
 		//fmt.Println(time.Now(), ",", command)
 
 		output, err := cmd.CombinedOutput()
-		_, err := cmd.CombinedOutput()
+		//_, err := cmd.CombinedOutput()
 		if err != nil {
 			fmt.Println(err)
 		}
